@@ -1,0 +1,39 @@
+; User specific Mercurial config file.
+; See the hgrc man page for details.
+
+[ui]
+username = Dmitry Sidorenko <rustydragon@gmail.com>
+#merge = winmergeu
+
+
+[tortoisehg]
+tabwidth = 4
+;pushafterci = True
+postpull = update
+
+[extensions]
+hgext.mq =
+progress =
+hgext.graphlog = 
+pager = 
+eol = 
+mq = 
+fetch = 
+rebase =
+convert =
+hgext.bookmarks =
+hggit = 
+churn =
+#inotify = 
+
+
+[web]
+style = paper
+
+[auth]
+bitbucket.prefix = bitbucket.org
+bitbucket.username = dmitry.sidorenko
+
+[auth]
+googlecode.prefix = googlecode.com
+googlecode.username = rustydragon

@@ -26,9 +26,6 @@ set autoindent
 set hidden
 
 
-set background=dark
-colorscheme solarized          " Theme
-
 set linebreak
 
 " Display the cursor position on the last line of the screen or in the status
@@ -74,7 +71,9 @@ set laststatus=2                    " Always show the statusline
 " Enable fancy mode 
 let g:Powerline_symbols = 'unicode'   " Powerline
 
-let g:solarized_termtrans = 1 " Solarized transparency
+let g:solarized_termtrans = 1  " Solarized transparency
+set background=dark
+colorscheme solarized          " Theme
 
 "SWAGG
 set relativenumber                           " setting line numbers

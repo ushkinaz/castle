@@ -74,6 +74,8 @@ set laststatus=2                    " Always show the statusline
 " Enable fancy mode 
 let g:Powerline_symbols = 'unicode'   " Powerline
 
+let g:solarized_termtrans = 1 " Solarized transparency
+
 "SWAGG
 set relativenumber                           " setting line numbers
 set colorcolumn=120                          " line to show 81 character mark

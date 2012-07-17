@@ -25,3 +25,6 @@
 [submodule "home/.vim/bundle/numbers"]
 	path = home/.vim/bundle/numbers
 	url = http://github.com/myusuf3/numbers.vim.git
+[submodule "home/.vim/bundle/solarized"]
+	path = home/.vim/bundle/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git

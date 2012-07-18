@@ -87,11 +87,11 @@ fi
 # Add RVM to PATH for scripting
 # RVM installed in home dir take precedence
 if [ -d $HOME/.rvm/bin ]; then
-    rvm_path=$HOME/.rvm
+    export rvm_path=$HOME/.rvm
 elif [ -d $NETWORK_HOME/.rvm/bin ]; then
-    rvm_path=$NETWORK_HOME/.rvm
+    export rvm_path=$NETWORK_HOME/.rvm
 fi
-export rvm_path
+
 PATH=$PATH:$rvm_path/bin
 
 # Load RVM into a shell session *as a function*

@@ -77,7 +77,24 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+
+#Network home
+if [ -d /u05/$(whoami) ]; then
+    export NETWORK_HOME='/u05/$(whoami)'
+fi
+
+# Add RVM to PATH for scripting
+# RVM installed in home dir take precedence
+if [ -d $HOME/.rvm/bin ]; then
+    RVM_HOME=$NETWORK_HOME/.rvm
+elif [ -d $NETWORK_HOME/.rvm/bin ]; then
+    RVM_HOME=$HOME/.rvm
+fi
+PATH=$PATH:$RVM_HOME/bin
+
+# Load RVM into a shell session *as a function*
+[[ -s "$RVM_HOME/.rvm/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm" 
 
 
 # Java settings
@@ -106,3 +123,4 @@ export PROMPT_COMMAND='history -a'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+/u05/dsidorenko/.rvm/scripts/rvm

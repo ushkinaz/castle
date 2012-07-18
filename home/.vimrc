@@ -76,9 +76,9 @@ set background=dark
 colorscheme solarized          " Theme
 
 "SWAGG
-set relativenumber                           " setting line numbers
-set colorcolumn=120                          " line to show 81 character mark
-set cursorline                               " shows the horizontal cursor line
+"set relativenumber                           " setting line numbers
+"set colorcolumn=120                          " line to show 81 character mark
+"set cursorline                               " shows the horizontal cursor line
 "nmap <leader>ev :vsplit $MYVIMRC<cr>         " mapping to edit my vimrc quickly
 "nmap <leader>sv :source $MYVIMRC<cr>         " mapping to source my vimrc quickly
 

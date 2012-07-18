@@ -87,15 +87,15 @@ fi
 # Add RVM to PATH for scripting
 # RVM installed in home dir take precedence
 if [ -d $HOME/.rvm/bin ]; then
-    RVM_HOME=$HOME/.rvm
+    rvm_path=$HOME/.rvm
 elif [ -d $NETWORK_HOME/.rvm/bin ]; then
-    RVM_HOME=$NETWORK_HOME/.rvm
+    rvm_path=$NETWORK_HOME/.rvm
 fi
-export RVM_HOME
-PATH=$PATH:$RVM_HOME/bin
+export rvm_path
+PATH=$PATH:$rvm_path/bin
 
 # Load RVM into a shell session *as a function*
-[[ -s "$RVM_HOME/.rvm/scripts/rvm" ]] && source "$RVM_HOME/scripts/rvm" 
+[[ -s "$rvm_path/.rvm/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" 
 
 
 # Java settings

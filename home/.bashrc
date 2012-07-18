@@ -81,15 +81,15 @@ fi
 
 #Network home
 if [ -d /u05/$(whoami) ]; then
-    export NETWORK_HOME='/u05/$(whoami)'
+    export NETWORK_HOME="/u05/$(whoami)"
 fi
 
 # Add RVM to PATH for scripting
 # RVM installed in home dir take precedence
 if [ -d $HOME/.rvm/bin ]; then
-    RVM_HOME=$NETWORK_HOME/.rvm
-elif [ -d $NETWORK_HOME/.rvm/bin ]; then
     RVM_HOME=$HOME/.rvm
+elif [ -d $NETWORK_HOME/.rvm/bin ]; then
+    RVM_HOME=$NETWORK_HOME/.rvm
 fi
 PATH=$PATH:$RVM_HOME/bin
 

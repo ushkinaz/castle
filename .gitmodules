@@ -1,15 +1,9 @@
 [submodule "home/.vim/bundle/fugitive"]
 	path = home/.vim/bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule "home/.vim/bundle/python-mode"]
-	path = home/.vim/bundle/python-mode
-	url = http://github.com/klen/python-mode.git
 [submodule "home/.vim/bundle/nerdtree"]
 	path = home/.vim/bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
-[submodule "home/.vim/bundle/tagbar"]
-	path = home/.vim/bundle/tagbar
-	url = http://github.com/majutsushi/tagbar.git
 [submodule "home/.vim/bundle/vim-powerline"]
 	path = home/.vim/bundle/vim-powerline
 	url = http://github.com/Lokaltog/vim-powerline
@@ -22,9 +16,7 @@
 [submodule "home/.vim/bundle/ack"]
 	path = home/.vim/bundle/ack
 	url = http://github.com/mileszs/ack.vim.git
-[submodule "home/.vim/bundle/numbers"]
-	path = home/.vim/bundle/numbers
-	url = http://github.com/myusuf3/numbers.vim.git
 [submodule "home/.vim/bundle/solarized"]
 	path = home/.vim/bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+    url = git://github.com/altercation/vim-colors-solarized.git
+

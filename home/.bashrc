@@ -92,11 +92,12 @@ elif [ -d $NETWORK_HOME/.rvm/bin ]; then
     export rvm_path=$NETWORK_HOME/.rvm
 fi
 
-PATH=$PATH:$rvm_path/bin
+if [ "$rvm_path" != "" ]; then
+    PATH=$PATH:$rvm_path/bin
 
-# Load RVM into a shell session *as a function*
-[[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" 
-
+    # Load RVM into a shell session *as a function*
+    [[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" 
+fi
 
 # Java settings
 export MAVEN_OPTS="-Xms256m -Xmx1024m -XX:MaxPermSize=512m"

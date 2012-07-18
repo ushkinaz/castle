@@ -95,7 +95,7 @@ export rvm_path
 PATH=$PATH:$rvm_path/bin
 
 # Load RVM into a shell session *as a function*
-[[ -s "$rvm_path/.rvm/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" 
+[[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" 
 
 
 # Java settings

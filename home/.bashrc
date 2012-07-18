@@ -91,6 +91,7 @@ if [ -d $HOME/.rvm/bin ]; then
 elif [ -d $NETWORK_HOME/.rvm/bin ]; then
     RVM_HOME=$NETWORK_HOME/.rvm
 fi
+export RVM_HOME
 PATH=$PATH:$RVM_HOME/bin
 
 # Load RVM into a shell session *as a function*

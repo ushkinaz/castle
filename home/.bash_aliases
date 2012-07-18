@@ -30,8 +30,8 @@ if [ -d ~/Workspace/agent ]; then
     alias cda='cd ~/Workspace/agent/'
 fi
 
-if [ -d /u05/$(whoami) ]; then
-    alias cdn='cd /u05/$(whoami)'
+if [ -d $NETWORK_HOME ]; then
+    alias cdn='cd $NETWORK_HOME'
 fi
 
 if [ -d ~/Workspace/agent/app.aggregator ]; then

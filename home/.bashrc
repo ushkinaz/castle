@@ -66,11 +66,6 @@ xterm*|rxvt*)
 esac
 
 
-# Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -97,8 +92,17 @@ if [ -d /opt/gradle/current ]; then
     PATH="$GRADLE_HOME/bin:$PATH"
 fi
 
+if [ -d /opt/maven/current/ ]; then
+    export M2_HOME=/opt/maven/current/
+fi
+
 
 #Exit if IGNOREEOF EOF's sent
 export IGNOREEOF=1
 
 export PROMPT_COMMAND='history -a'
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi

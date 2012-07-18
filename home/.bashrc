@@ -124,4 +124,3 @@ export PROMPT_COMMAND='history -a'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-/u05/dsidorenko/.rvm/scripts/rvm

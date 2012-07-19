@@ -54,8 +54,8 @@ elif [ -d $NETWORK_HOME/.rvm/bin ]; then
     export rvm_path=$NETWORK_HOME/.rvm
 fi
 
-if [ "$rvm_path" != "" ]; then
-    PATH=$PATH:$rvm_path/bin
+if [  "$rvm_path" != "" ]; then
+    export PATH=$PATH:$rvm_path/bin
 
     # Load RVM into a shell session *as a function*
     [[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" 

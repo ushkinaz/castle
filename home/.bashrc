@@ -25,7 +25,7 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-PS1='\u @ $PRETTY_HOST_NAME \W $ '
+PS1='\u@$PRETTY_HOST_NAME \W $ '
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -78,6 +78,7 @@ fi
 #Exit if IGNOREEOF EOF's sent
 export IGNOREEOF=1
 
+#Save history
 export PROMPT_COMMAND='history -a'
 
 # Alias definitions.

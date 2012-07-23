@@ -25,7 +25,9 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-PS1='\u@$PRETTY_HOST_NAME \W $ '
+#Show that many dir components in \w
+export PROMPT_DIRTRIM=2
+PS1="\u@\[$(tput setaf 4)\]HOST_NAME \[$(tput setaf 2)\]\w \[$(tput bold)\]\\$\[$(tput sgr0)\] "
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

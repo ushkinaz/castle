@@ -6,8 +6,5 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-
-
 export EDITOR=vim
 export TERM=xterm-color

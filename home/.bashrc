@@ -25,6 +25,10 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+export EDITOR=vim
+export TERM=xterm-color
+
+
 #Show that many dir components in \w
 export PROMPT_DIRTRIM=2
 PS1='\u@\[$(tput setaf 4)\]$PRETTY_HOST_NAME \[$(tput setaf 2)\]\w \[$(tput bold)\]\\$\[$(tput sgr0)\] '

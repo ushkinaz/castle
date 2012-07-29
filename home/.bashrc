@@ -28,10 +28,9 @@ fi
 export EDITOR=vim
 export TERM=xterm-color
 
-
 #Show that many dir components in \w
 export PROMPT_DIRTRIM=2
-PS1='\u@\[$(tput setaf 4)\]$PRETTY_HOST_NAME \[$(tput setaf 2)\]\w \[$(tput bold)\]\\$\[$(tput sgr0)\] '
+PS1=export PS1='\u@\[$(tput setaf 4)\]$PRETTY_HOST_NAME \[$(tput setaf 2)\][\w]$(__git_ps1 " (%s)") \[$(tput bold)\]\\$\[$(tput sgr0)\] '
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -61,7 +60,7 @@ if [  "$rvm_path" != "" ]; then
     export PATH=$PATH:$rvm_path/bin
 
     # Load RVM into a shell session *as a function*
-    [[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" 
+    [[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm"
 fi
 
 # Java settings

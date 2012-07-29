@@ -1,6 +1,5 @@
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     
     LS_COLOR=' --color=auto'
     alias grep='grep --color=auto'
@@ -26,8 +25,8 @@ alias du='du -h'
 alias less='less -r'                          # raw control characters
 
 
-if [ -d ~/Workspace/agent ]; then
-    alias cda='cd ~/Workspace/agent/'
+if [ -d $HOME/Workspace/agent ]; then
+    alias cda='cd $HOME/Workspace/agent/'
 fi
 
 if [ -d $NETWORK_HOME ]; then
@@ -38,13 +37,13 @@ if [ -d ~/Workspace/agent/app.aggregator ]; then
     alias cdag='cd ~/Workspace/agent/app.aggregator'
 fi
 
-if [ -d ~/logs/aslogs/ ]; then
-	alias cdl='cd ~/logs/aslogs/'
+if [ -d $HOME/logs/aslogs/ ]; then
+	alias cdl='cd $HOME/logs/aslogs/'
 fi
 
 #Maven, quick and durty rebuild
 if [ -x $M2_HOME/bin/mvn ]; then
-alias smoke='mvn --fail-at-end -B -T 2.0C -DskipTests clean compile'	
+    alias dirt='mvn --fail-at-end -B -T 2.0C -DskipTests clean compile'	
 fi
 
 # Add an "alert" alias for long running commands.  Use like so:

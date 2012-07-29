@@ -1,6 +1,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
+fi
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -86,16 +88,15 @@ export IGNOREEOF=1
 #Save history
 export PROMPT_COMMAND='history -a'
 
-# Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # # Local customization of bash. .bash_local should not be included in castle
-if [ -f ~/.bash_local ]; then
-    . ~/.bash_local
+if [ -f $HOME/.bash_local ]; then
+    source $HOME/.bash_local
 fi
 
+# Alias definitions.
+if [ -f $HOME/.aliases ]; then
+    source $HOME/.aliases
+fi
 
 if [[ "$PRETTY_HOST_NAME" = "" ]]; then
     export PRETTY_HOST_NAME=$(hostname -s)

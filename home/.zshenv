@@ -57,6 +57,7 @@ fi
 # Editors
 export EDITOR='vim'
 export VISUAL='vim'
+
 if [ -x most ]; then
     export PAGER='most'
 else
@@ -80,3 +81,44 @@ if (( $+commands[lesspipe.sh] )); then
   export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+#Network home
+if [ -d /u05/$(whoami) ]; then
+    export NETWORK_HOME="/u05/$(whoami)"
+fi
+
+
+# Add RVM to PATH for scripting
+# RVM installed in home dir take precedence
+if [ -d $HOME/.rvm/bin ]; then
+    export rvm_path=$HOME/.rvm
+elif [ -d $NETWORK_HOME/.rvm/bin ]; then
+    export rvm_path=$NETWORK_HOME/.rvm
+fi
+
+if [  "$rvm_path" != "" ]; then
+    export PATH=$PATH:$rvm_path/bin
+fi
+
+# Java settings
+export MAVEN_OPTS="-Xms256m -Xmx1024m -XX:MaxPermSize=512m"
+
+if [ -d /usr/lib/jvm/java-6-sun/ ]; then
+    export JAVA_HOME=/usr/lib/jvm/java-6-sun/
+fi
+
+if [ -d /opt/gradle/current ]; then
+    export GRADLE_HOME="/opt/gradle/current"
+    PATH="$GRADLE_HOME/bin:$PATH"
+fi
+
+if [ -d /opt/maven/current/ ]; then
+    export M2_HOME=/opt/maven/current/
+fi
+
+if [[ "$PRETTY_HOST_NAME" = "" ]]; then
+    export PRETTY_HOST_NAME=$(hostname -s)
+fi

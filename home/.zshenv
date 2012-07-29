@@ -54,11 +54,15 @@ if [[ -z "$LANG" ]]; then
   eval "$(locale)"
 fi
 
+#Terminal
+export TERM=xterm-color
+
+
 # Editors
 export EDITOR='vim'
 export VISUAL='vim'
 
-if [ -x most ]; then
+if [ command -v most >/dev/null 2>& ]; then
     export PAGER='most'
 else
     export PAGER='less'

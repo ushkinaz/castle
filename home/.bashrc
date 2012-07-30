@@ -27,9 +27,6 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-export EDITOR=vim
-export TERM=xterm-color
-
 #Show that many dir components in \w
 export PROMPT_DIRTRIM=2
 PS1=export PS1='\u@\[$(tput setaf 4)\]$PRETTY_HOST_NAME \[$(tput setaf 2)\][\w]$(__git_ps1 " (%s)") \[$(tput bold)\]\\$\[$(tput sgr0)\] '
@@ -41,45 +38,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-#Network home
-if [ -d /u05/$(whoami) ]; then
-    export NETWORK_HOME="/u05/$(whoami)"
-fi
-
-# Add RVM to PATH for scripting
-# RVM installed in home dir take precedence
-if [ -d $HOME/.rvm/bin ]; then
-    export rvm_path=$HOME/.rvm
-elif [ -d $NETWORK_HOME/.rvm/bin ]; then
-    export rvm_path=$NETWORK_HOME/.rvm
-fi
-
-if [  "$rvm_path" != "" ]; then
-    export PATH=$PATH:$rvm_path/bin
-
-    # Load RVM into a shell session *as a function*
-    [[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm"
-fi
-
-# Java settings
-export MAVEN_OPTS="-Xms256m -Xmx1024m -XX:MaxPermSize=512m"
-
-if [ -d /usr/lib/jvm/java-6-sun/ ]; then
-    export JAVA_HOME=/usr/lib/jvm/java-6-sun/
-fi
-
-if [ -d /opt/gradle/current ]; then
-    export GRADLE_HOME="/opt/gradle/current"
-    PATH="$GRADLE_HOME/bin:$PATH"
-fi
-
-if [ -d /opt/maven/current/ ]; then
-    export M2_HOME=/opt/maven/current/
-fi
+# Load RVM into a shell session *as a function*
+[[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm"
 
 
 #Exit if IGNOREEOF EOF's sent
@@ -98,6 +58,7 @@ if [ -f $HOME/.aliases ]; then
     source $HOME/.aliases
 fi
 
-if [[ "$PRETTY_HOST_NAME" = "" ]]; then
-    export PRETTY_HOST_NAME=$(hostname -s)
+# Alias definitions.
+if [ -f $HOME/.env ]; then
+    source $HOME/.env
 fi

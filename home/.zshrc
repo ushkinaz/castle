@@ -32,13 +32,12 @@ zstyle ':omz:load' omodule \
   'completion' \
   'git' \
   'ssh-agent' \
-  'tmux' \
   'prompt'
 
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':omz:module:prompt' theme 'random'
+zstyle ':omz:module:prompt' theme 'sorin'
 
 #ssh-agent forwarding
 zstyle ':omz:module:ssh-agent' forwarding 'yes'
@@ -46,7 +45,7 @@ zstyle ':omz:module:ssh-agent' forwarding 'yes'
 # load multiple identities
 zstyle ':omz:module:ssh-agent' identities 'dsidorenko' 'rustydragon'
 
-zstyle ':omz:module:tmux' auto-start 'yes'
+# zstyle ':omz:module:tmux' auto-start 'yes'
 
 # This will make you shout: OH MY ZSHELL!
 source "$OMZ/init.zsh"

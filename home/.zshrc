@@ -1,5 +1,5 @@
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':omz:module:editor' keymap 'vi'
+zstyle ':omz:module:editor' keymap 'emacs'
 
 # Auto convert .... to ../..
 zstyle ':omz:module:editor' dot-expansion 'yes'
@@ -37,7 +37,7 @@ zstyle ':omz:load' omodule \
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':omz:module:prompt' theme 'sorin'
+zstyle ':omz:module:prompt' theme 'steeef'
 
 #ssh-agent forwarding
 zstyle ':omz:module:ssh-agent' forwarding 'yes'
@@ -54,17 +54,17 @@ source "$OMZ/init.zsh"
 
 
 if [ -x /usr/bin/dircolors ]; then
-    test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
+   test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
 fi
 
 # Load RVM into a shell session *as a function*
 [[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm"
 
-# # Local customization of zsh. .zsh_local should not be included in castle
+# Local customization of zsh. .zsh_local should not be included in castle
 if [ -f $HOME/.zsh_local ]; then
-    source $HOME/.zsh_local
+   source $HOME/.zsh_local
 fi
 
 if [ -f $HOME/.aliases ]; then
-    source $HOME/.aliases
+   source $HOME/.aliases
 fi

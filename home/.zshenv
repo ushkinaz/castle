@@ -5,9 +5,6 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-# Set the path to Oh My Zsh.
-export OMZ="$HOME/.oh-my-zsh"
-
 # Paths
 typeset -gU cdpath fpath mailpath manpath path
 typeset -gUT INFOPATH infopath
@@ -54,7 +51,7 @@ if [[ -z "$LANG" ]]; then
   eval "$(locale)"
 fi
 
-# Alias definitions.
+# Common vars definitions.
 if [ -f $HOME/.env ]; then
     source $HOME/.env
 fi

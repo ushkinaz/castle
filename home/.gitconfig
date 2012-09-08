@@ -87,3 +87,7 @@
 
     # shorter alias
     lsg = ls-github
+
+[merge "mps"]
+	name = MPS merge driver
+	driver = "\"/home/dsidorenko/.MPS25/config/mps-merger.sh\" %O %A %B %L"

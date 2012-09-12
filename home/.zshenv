@@ -1,13 +1,12 @@
-#
-# Defines environment variables.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # Paths
+
 typeset -gU cdpath fpath mailpath manpath path
 typeset -gUT INFOPATH infopath
+
+# Language
+if [[ -z "$LANG" ]]; then
+  eval "$(locale)"
+fi
 
 # Set the the list of directories that cd searches.
 # cdpath=(
@@ -46,9 +45,15 @@ for path_file in /etc/paths.d/*(.N); do
 done
 unset path_file
 
-# Language
-if [[ -z "$LANG" ]]; then
-  eval "$(locale)"
+#
+# Temporary Files
+#
+
+if [[ -d "$TMPDIR" ]]; then
+  export TMPPREFIX="${TMPDIR%/}/zsh"
+  if [[ ! -d "$TMPPREFIX" ]]; then
+    mkdir -p "$TMPPREFIX"
+  fi
 fi
 
 # Common vars definitions.

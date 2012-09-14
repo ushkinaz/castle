@@ -42,7 +42,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'prompt'
 
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'bart'
 
 #ssh-agent forwarding
 zstyle ':omz:module:ssh-agent' forwarding 'yes'

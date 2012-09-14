@@ -60,3 +60,5 @@ fi
 if [ -f $HOME/.env ]; then
     source $HOME/.env
 fi
+
+export HISTSIZE=1000000

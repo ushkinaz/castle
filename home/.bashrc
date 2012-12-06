@@ -29,7 +29,7 @@ fi
 
 #Show that many dir components in \w
 export PROMPT_DIRTRIM=2
-PS1=export PS1='\u@\[$(tput setaf 4)\]$PRETTY_HOST_NAME \[$(tput setaf 2)\][\w]$(__git_ps1 " (%s)") \[$(tput bold)\]\\$\[$(tput sgr0)\] '
+export PS1='\u@\[$(tput setaf 4)\]$PRETTY_HOST_NAME \[$(tput setaf 2)\][\w] \[$(tput bold)\]\\$\[$(tput sgr0)\] '
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

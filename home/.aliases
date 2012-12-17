@@ -1,6 +1,6 @@
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    
+
     LS_COLOR=' --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -23,6 +23,7 @@ alias du='du -h'
 
 # Misc :)
 alias less='less -r'                          # raw control characters
+alias myip='curl curlmyip.com'
 
 
 if [ -d $HOME/Workspace/agent ]; then
@@ -49,5 +50,5 @@ fi
 
 #Maven, quick and durty rebuild
 if [ -x $M2_HOME/bin/mvn ]; then
-    alias dirt='mvn --fail-at-end -B -T 2.0C -DskipTests clean install' 
+    alias dirt='mvn --fail-at-end -B -T 2.0C -DskipTests clean install'
 fi

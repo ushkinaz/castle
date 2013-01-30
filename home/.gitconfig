@@ -1,6 +1,6 @@
 [user]
 	name = Dmitry Sidorenko
-	email = rustydragon@gmail.com
+	email = dsidorenko@agent.ru
 
 [color]
 	diff = auto
@@ -16,10 +16,12 @@
 	co = checkout
 	br = branch
 	ci = commit
-	st = status
+	st = status -sb
 	unstage = reset HEAD --
 	out = log origin..HEAD
-	glog = log --oneline --graph
+    glog = log --oneline --graph
+    dev = checkout master
+    stb = checkout stable
 
     # various pretty loggers from various places
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -91,3 +93,9 @@
 [merge "mps"]
 	name = MPS merge driver
 	driver = "\"/home/dsidorenko/.MPS25/config/mps-merger.sh\" %O %A %B %L"
+[core]
+    autocrlf = input
+
+[push]
+    default = tracking
+

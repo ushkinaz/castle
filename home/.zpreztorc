@@ -38,16 +38,14 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'git' \
-  'ssh-agent' \
   'history-substring-search' \
   'prompt'
 
-zstyle ':prezto:module:prompt' theme 'bart'
+if [[ "$(whoami)" == "root" ]]; then
+  zstyle ':prezto:module:prompt' theme 'fire'
+else
+  zstyle ':prezto:module:prompt' theme 'peepcode'
+fi
 
-#ssh-agent forwarding
-zstyle ':omz:module:ssh-agent' forwarding 'yes'
-
-# load multiple identities
-zstyle ':omz:module:ssh-agent' identities 'dsidorenko' 'rustydragon'
 
 zstyle ':omz:module:tmux' auto-start 'yes'

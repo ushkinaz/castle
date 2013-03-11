@@ -38,7 +38,7 @@ if [ -d ~/Workspace/agent/app.aggregator ]; then
     alias cdag='cd ~/Workspace/agent/app.aggregator'
 fi
 
-if [ -d $HOME/logs/aslogs/ ]; then
+if [ -d /u02/logs/aslogs/ ]; then
 	alias cdl='cd $HOME/logs/aslogs/'
 fi
 

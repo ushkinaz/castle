@@ -38,10 +38,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Load RVM into a shell session *as a function*
-[[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm"
-
-
 #Exit if IGNOREEOF EOF's sent
 export IGNOREEOF=1
 

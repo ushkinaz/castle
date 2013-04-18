@@ -11,6 +11,9 @@
 
 [http]
 #	proxy = http://localhost:8118
+#
+[diff]
+    renamelimit = 2000
 
 [alias]
 	co = checkout

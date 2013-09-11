@@ -101,4 +101,6 @@
 
 [push]
     default = tracking
-
+[merge]
+    renamelimit=5000
+	summary = true

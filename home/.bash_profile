@@ -8,3 +8,6 @@ fi
 
 export EDITOR=vim
 export TERM=xterm-color
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/dsidorenko/.gvm/bin/gvm-init.sh" ]] && source "/home/dsidorenko/.gvm/bin/gvm-init.sh"

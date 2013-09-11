@@ -58,3 +58,8 @@ fi
 if [ -f $HOME/.env ]; then
     source $HOME/.env
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/dsidorenko/.gvm/bin/gvm-init.sh" ]] && source "/home/dsidorenko/.gvm/bin/gvm-init.sh"

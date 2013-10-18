@@ -36,24 +36,24 @@
     whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 
     # commits not pushed to $1
-    unpushed = cherry -v 
+    unpushed = cherry -v
 
     # what tag contains the sha
     whatrelease = name-rev --name-only
 
     # what branch contains the sha
-    contains = branch --contains 
+    contains = branch --contains
 
     # what got pushed to master in the last hour
     #  based on http://stackoverflow.com/questions/3357219/expose-the-date-a-commit-was-pushed-to-a-repository
     justpushed = log origin/master@{\"1 hour ago\"}..origin/master --
 
     # log everything with $1 string in the diff
-    timegrep = log -S 
+    timegrep = log -S
 
     # like above, but show the diff
     diffgrep = log -p -S
- 
+
     # search logs for a bugzilla like number
     findbug = "!sh -c 'git log --grep ^$1:' -"
 
@@ -63,17 +63,14 @@
     # from https://gist.github.com/492227
     lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
 
-    # show a log without the formating, occasionaly handy for c&p
-    rawlog = log --format=\"format:commit %H%nAuthor:%an%n%n%B%n\"
-
-    # show a list of branches sorted by time of last commit 
+    # show a list of branches sorted by time of last commit
     brage = "!f() { git for-each-ref --sort=committerdate refs/heads $1  --format=\"%(refname:short)\" ; }; g() { for C in $(f $1) ; do git show -s --pretty=format:\"%Cgreen%ci %Cblue%cr%Creset  $C\" \"$C\" -- ; done; }; g "
 
     # show remote branches as well
     brageall = !git brage refs/remotes
 
     # show a list of tags sorted by when they were tagged
-    tagage = "!sh -c 'git for-each-ref --sort=taggerdate refs/tags --format=\"%(refname:short)\"'" 
+    tagage = "!sh -c 'git for-each-ref --sort=taggerdate refs/tags --format=\"%(refname:short)\"'"
 
     # show a list of every branch and show there latests commit, sorted by last commit
     brlog = "!sh -c 'for C in $(git for-each-ref --sort=committerdate refs/heads --format=\"%(refname:short)\") ; do git show -s --pretty=format:\"%Cgreen%ci %Cblue%cr%Creset  $C\" \"$C\" -- ; git show  -s $C ; echo; done'"
@@ -81,23 +78,12 @@
     # not useful itself, but handy to remember for use in scripts
     thisbranch = rev-parse --abbrev-ref HEAD
 
-    # remove a file from index
-    unadd = git reset HEAD 
-
     # from https://github.com/cypher/dotfiles/blob/master/gitconfig
     ls-ignored = ls-files --exclude-standard --ignored --others
 
-    # based on "buggyfiles" above and https://github.com/cypher/dotfiles/blob/master/bin/git-churn
-    churn = !"git log -M -C --name-only --format=\"format:%n\" | grep . | sort | uniq -c | sort -n" 
-
-    # shorter alias
-    lsg = ls-github
-
-[merge "mps"]
-	name = MPS merge driver
-	driver = "\"/home/dsidorenko/.MPS25/config/mps-merger.sh\" %O %A %B %L"
 [core]
     autocrlf = input
+    pager = less
 
 [push]
     default = tracking

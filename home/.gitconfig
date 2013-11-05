@@ -22,7 +22,6 @@
 	st = status -sb
 	unstage = reset HEAD --
 	out = log origin..HEAD
-    glog = log --oneline --graph
     dev = checkout master
     stb = checkout stable
 
@@ -34,6 +33,8 @@
     # from https://git.wiki.kernel.org/index.php/Aliases
     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
     whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+
+    contributors = shortlog -sne
 
     # commits not pushed to $1
     unpushed = cherry -v
@@ -90,3 +91,5 @@
 [merge]
     renamelimit=5000
 	summary = true
+[http]
+	sslVerify = false

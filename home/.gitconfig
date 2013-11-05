@@ -16,12 +16,12 @@
     renamelimit = 2000
 
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status -sb
-	unstage = reset HEAD --
-	out = log origin..HEAD
+    co = checkout
+    br = branch
+    ci = commit
+    st = status -sb
+    unstage = reset HEAD --
+    out = log origin..HEAD
     dev = checkout master
     stb = checkout stable
 
@@ -90,6 +90,7 @@
     default = tracking
 [merge]
     renamelimit=5000
-	summary = true
+    summary = true
 [http]
-	sslVerify = false
+    sslVerify = false
+

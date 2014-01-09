@@ -26,14 +26,14 @@ alias less='less -r'                          # raw control characters
 alias myip='curl curlmyip.com'
 
 
-if [ -d $HOME/Workspace/agent ]; then
-    alias cda='cd $HOME/Workspace/agent/'
-    alias cdag='cd ~/Workspace/agent/app.aggregator'
+if [ -d $HOME/Workspace/server/master ]; then
+    alias cda='cd $HOME/Workspace/server/master/'
+    alias cdag='cd ~/Workspace/server/master/app.aggregator'
 fi
 
-if [ -d $HOME/Workspace/s-agent ]; then
-    alias cds='cd $HOME/Workspace/s-agent/'
-    alias cdsg='cd ~/Workspace/s-agent/app.aggregator'
+if [ -d $HOME/Workspace/server/stable ]; then
+    alias cds='cd $HOME/Workspace/server/stable/'
+    alias cdsg='cd ~/Workspace/server/stable/app.aggregator'
 fi
 
 if [ -d $NETWORK_HOME ]; then
@@ -41,7 +41,7 @@ if [ -d $NETWORK_HOME ]; then
 fi
 
 if [ -d /u02/logs/aslogs/ ]; then
-	alias cdl='cd $HOME/logs/aslogs/'
+	alias cdl='cd /u02/logs/aslogs/'
 fi
 
 # Add an "alert" alias for long running commands.  Use like so:

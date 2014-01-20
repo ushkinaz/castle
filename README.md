@@ -17,3 +17,4 @@ Generic files, not specific for any shell/OS:
 
 * aliases - shell aliases
 * env - env variables
+* xvm - configuration for rvm, gvm and simular

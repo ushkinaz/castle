@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Configuration for various *vm managers: rvm, gvm etc
+
+# Load RVM into a shell session *as a function*
+[[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm"
+
+if [  "$rvm_path" != "" ]; then
+  export PATH=$PATH:$rvm_path/bin
+fi
+
+rvm use 1.9.3 2> /dev/null >/dev/null || rvm use 1.9.2 2> /dev/null 1>/dev/null
+if which ruby 2> /dev/null >/dev/null && which gem 2> /dev/null >/dev/null; then
+    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"

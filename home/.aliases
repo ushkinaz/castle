@@ -1,4 +1,7 @@
-# enable color support of ls and also add handy aliases
+#!/bin/sh
+# Shell aliases
+
+# Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
 
     LS_COLOR=' --color=auto'
@@ -7,7 +10,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-#Listings
+# Listings
 alias ll='ls -alF'$LS_COLOR
 alias la='ls -A'$LS_COLOR
 alias ls='ls -CF'$LS_COLOR
@@ -50,7 +53,8 @@ if [ -x /usr/bin/notify-send ]; then
 	alias alert='notify-send --urgency=low -t 1000 -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 fi
 
-#Maven, quick and durty rebuild
+# Maven
 if [ -x $M2_HOME/bin/mvn ]; then
+    # quick and dirty rebuild
     alias dirt='mvn --fail-at-end -B -T 2.0C -DskipTests clean install'
 fi

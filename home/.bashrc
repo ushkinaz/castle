@@ -44,11 +44,6 @@ export IGNOREEOF=1
 #Save history
 export PROMPT_COMMAND='history -a'
 
-# # Local customization of bash. .bash_local should not be included in castle
-if [ -f $HOME/.bash_local ]; then
-    source $HOME/.bash_local
-fi
-
 # Alias definitions.
 if [ -f $HOME/.aliases ]; then
     source $HOME/.aliases
@@ -59,6 +54,11 @@ if [ -f $HOME/.env ]; then
     source $HOME/.env
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [ -f $HOME/.xvm ]; then
+    source $HOME/.xvm
+fi
 
-[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
+# Local customization of bash. .bash_local should not be included in castle
+if [ -f $HOME/.bash_local ]; then
+    source $HOME/.bash_local
+fi

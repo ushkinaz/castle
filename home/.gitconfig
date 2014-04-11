@@ -87,7 +87,7 @@
     pager = less
 
 [push]
-    default = tracking
+    default = upstream
 [merge]
     renamelimit=5000
     summary = true

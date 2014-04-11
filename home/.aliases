@@ -29,14 +29,9 @@ alias less='less -r'                          # raw control characters
 alias myip='curl curlmyip.com'
 
 
-if [ -d $HOME/Workspace/server/master ]; then
-    alias cda='cd $HOME/Workspace/server/master/'
-    alias cdag='cd ~/Workspace/server/master/app.aggregator'
-fi
-
-if [ -d $HOME/Workspace/server/stable ]; then
-    alias cds='cd $HOME/Workspace/server/stable/'
-    alias cdsg='cd ~/Workspace/server/stable/app.aggregator'
+if [ -d $HOME/Workspace/server/develop ]; then
+    alias cda='cd $HOME/Workspace/server/develop/'
+    alias cdap='cd ~/Workspace/server/develop/pokedex'
 fi
 
 if [ -d $NETWORK_HOME ]; then

@@ -22,8 +22,7 @@
     st = status -sb
     unstage = reset HEAD --
     out = log origin..HEAD
-    dev = checkout master
-    stb = checkout stable
+    dev = checkout develop
 
     # various pretty loggers from various places
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -40,7 +39,7 @@
     unpushed = cherry -v
 
     # what tag contains the sha
-    whatrelease = name-rev --name-only
+    whatrelease = name-rev --name-only --ref=v_*
 
     # what branch contains the sha
     contains = branch --contains

@@ -6,5 +6,3 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-export EDITOR=vim
-export TERM=xterm-color

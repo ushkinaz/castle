@@ -2,6 +2,9 @@
     name = Dmitry Sidorenko
     email = dsidorenko@agent.ru
 
+[core]
+	pager = less -+F
+
 [color]
 	diff = auto
 	status = auto
@@ -10,10 +13,35 @@
 	ui = auto
 
 [http]
-#	proxy = http://localhost:8118
-#
+    sslVerify = false
+
+[push]
+    default = tracking
+
+[merge]
+    renamelimit=5000
+    summary = true
+
+[mergetool "semanticmerge"]
+    cmd = semanticmergetool -s \"$REMOTE\" -d \"$LOCAL\" -b \"$BASE\" -r \"$MERGED\"
+    trustExitCode = true
+
 [diff]
     renamelimit = 2000
+    tool = diffuse
+	guitool = idea
+
+[difftool]
+    prompt = false
+
+[difftool "idea"]
+    cmd = /opt/idea/current/bin/idea.sh diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+
+[difftool "diffuse"]
+    cmd = diffuse -w -D $LOCAL $REMOTE
+
+[difftool "semanticdiff"]
+    cmd = semanticmergetool -s \"$LOCAL\" -d \"$REMOTE\"
 
 [alias]
     co = checkout
@@ -80,16 +108,3 @@
 
     # from https://github.com/cypher/dotfiles/blob/master/gitconfig
     ls-ignored = ls-files --exclude-standard --ignored --others
-
-[core]
-    autocrlf = input
-    pager = less
-
-[push]
-    default = tracking
-[merge]
-    renamelimit=5000
-    summary = true
-[http]
-    sslVerify = false
-

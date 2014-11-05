@@ -27,4 +27,4 @@ fi
 #     PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 # fi
 
-# [[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"

@@ -30,9 +30,13 @@ alias myip='curl curlmyip.com'
 
 
 if [ -d $HOME/Workspace/server/develop ]; then
-    alias cda='cd $HOME/Workspace/server/develop/'
-    alias cdap='cd ~/Workspace/server/develop/pokedex'
+    alias cda='_cda'
+    alias cdap='_cda pokedex'
 fi
+
+function _cda {
+    cd $HOME/Workspace/server/develop/$1
+}
 
 if [ -d $NETWORK_HOME ]; then
     alias cdn='cd $NETWORK_HOME'
@@ -53,3 +57,4 @@ if [ -x $M2_HOME/bin/mvn ]; then
     # quick and dirty rebuild
     alias dirt='mvn --fail-at-end -B -T 2.0C -DskipTests clean install'
 fi
+

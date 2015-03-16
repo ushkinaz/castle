@@ -3,7 +3,7 @@
     email = dsidorenko@agent.ru
 
 [core]
-	pager = less -+F
+	pager = /bin/less
 
 [color]
 	diff = auto
@@ -22,10 +22,6 @@
     renamelimit=5000
     summary = true
 
-[mergetool "semanticmerge"]
-    cmd = semanticmergetool -s \"$REMOTE\" -d \"$LOCAL\" -b \"$BASE\" -r \"$MERGED\"
-    trustExitCode = true
-
 [diff]
     renamelimit = 2000
     tool = diffuse
@@ -39,9 +35,6 @@
 
 [difftool "diffuse"]
     cmd = diffuse -w -D $LOCAL $REMOTE
-
-[difftool "semanticdiff"]
-    cmd = semanticmergetool -s \"$LOCAL\" -d \"$REMOTE\"
 
 [alias]
     co = checkout
@@ -108,3 +101,7 @@
 
     # from https://github.com/cypher/dotfiles/blob/master/gitconfig
     ls-ignored = ls-files --exclude-standard --ignored --others
+
+    # Список стори, которые замержены в девелоп, но отсутствуют в локальной ветке
+    unmerged = !"git log --merges --oneline ..origin/develop | grep --only-matching --perl-regexp 'Merge pull request .* feature/\\KSERV-\\d{4}[\\w-]*'" | grep 'SERV-\\d{4}'
+

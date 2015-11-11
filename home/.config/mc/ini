@@ -138,6 +138,8 @@ quick_search_mode=2
 
 simple_swap=false
 
+select_flags=6
+
 [FindFile]
 file_case_sens=false
 file_shell_pattern=true

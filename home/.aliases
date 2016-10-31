@@ -28,33 +28,19 @@ alias du='du -h'
 alias less='less -r'
 alias myip='curl curlmyip.com'
 
-# Agent.ru
-if [ -d $HOME/Workspace/agent/server ]; then
-    alias cda='_cda'
-    alias cdap='_cda pokedex'
+# Profee.com
+if [ -d $HOME/Workspace/cps/server ]; then
+    alias cdc='_cdc'
+    alias cdf='_cdc cps-fastserver'
 fi
 
-function _cda {
-    cd $HOME/Workspace/agent/server/$1
+function _cdc {
+    cd $HOME/Workspace/cps/server/$1
 }
 
-
-# Rusline.aero
-if [ -d $HOME/Workspace/rusline/server ]; then
-    alias cdr='_cdr'
-    alias cdrp='_cdr pokedex'
-fi
-
-function _cdr {
-    cd $HOME/Workspace/rusline/server/$1
-}
 
 if [ -d $NETWORK_HOME ]; then
     alias cdn='cd $NETWORK_HOME'
-fi
-
-if [ -d /u02/logs/aslogs/ ]; then
-	alias cdl='cd /u02/logs/aslogs/'
 fi
 
 # Add an "alert" alias for long running commands.  Use like so:

@@ -1,6 +1,8 @@
 Homesick castle
 ==========
 
+[![Join the chat at https://gitter.im/ushkinaz/castle](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ushkinaz/castle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is [homesick][1] castle.
 
 The repository holds generic part, which is (or should be) common for different OS'es, distribution, and shells.

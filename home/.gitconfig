@@ -1,9 +1,10 @@
 [user]
     name = Dmitry Sidorenko
-    email = dsidorenko@agent.ru
+    email = d.sidorenko@profee.com
 
 [core]
 	pager = /bin/less
+	autocrlf = input
 
 [color]
 	diff = auto
@@ -103,5 +104,5 @@
     ls-ignored = ls-files --exclude-standard --ignored --others
 
     # Список стори, которые замержены в девелоп, но отсутствуют в локальной ветке
-    unmerged = !"git log --merges --oneline ..origin/develop | grep --only-matching --perl-regexp 'Merge pull request .* feature/\\KSERV-\\d{4}[\\w-]*'" | grep 'SERV-\\d{4}'
+    unmerged = !"git log --merges --oneline ..origin/develop | grep --only-matching --perl-regexp 'Merge pull request .* feature/\\K[A-Z]+-\\d{4}[\\w-]*'" | grep '[A-Z]+-\\d{4}'
 

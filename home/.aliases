@@ -28,7 +28,7 @@ alias du='du -h'
 alias less='less -r'
 alias myip='curl curlmyip.com'
 
-# Profee.com
+# CPS-IT.RU
 if [ -d $HOME/Workspace/cps/server ]; then
     alias cdc='_cdc'
     alias cdf='_cdc cps-fastserver'
@@ -36,6 +36,15 @@ fi
 
 function _cdc {
     cd $HOME/Workspace/cps/server/$1
+}
+
+# Profee.com
+if [ -d $HOME/Workspace/profee/processing-server ]; then
+    alias cdp='_cdp'
+fi
+
+function _cdp {
+    cd $HOME/Workspace/profee/processing-server/$1
 }
 
 

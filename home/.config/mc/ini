@@ -5,7 +5,7 @@ shell_patterns=1
 auto_save_setup=1
 preallocate_space=0
 auto_menu=0
-use_internal_view=0
+use_internal_view=1
 use_internal_edit=0
 clear_before_exec=1
 confirm_delete=1
@@ -86,6 +86,8 @@ filepos_max_saved_entries=1024
 editor_drop_selection_on_copy=1
 editor_stop_format_chars=-+*\\,.;:&>
 
+editor_state_full_filename=1
+
 [Layout]
 message_visible=0
 keybar_visible=0
@@ -96,9 +98,9 @@ menubar_visible=0
 free_space=0
 horizontal_split=0
 vertical_equal=1
-left_panel_size=115
+left_panel_size=102
 horizontal_equal=1
-top_panel_size=26
+top_panel_size=28
 
 [Misc]
 timeformat_recent=%b %e %H:%M
@@ -139,6 +141,8 @@ quick_search_mode=2
 simple_swap=false
 
 select_flags=6
+
+panel_scroll_center=false
 
 [FindFile]
 file_case_sens=false

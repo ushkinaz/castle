@@ -1,6 +1,9 @@
-[user]
-    name = Dmitry Sidorenko
-    email = rustydragon@gmail.com
+[includeIf "gitdir:~/Workspace/"]
+    path = ~/.gitconfig-work
+[includeIf "gitdir:~/Workspace/private"]
+    path = ~/.gitconfig-personal
+[includeIf "gitdir:~/"]
+    path = ~/.gitconfig-personal
 
 [core]
 	pager = /bin/less

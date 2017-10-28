@@ -1,7 +1,7 @@
 Homesick castle
 ==========
 
-This is [homesick][1] castle.
+This is [homeshick][1] castle.
 
 The repository holds generic part, which is (or should be) common for different OS'es, distribution, and shells.
 
@@ -21,4 +21,4 @@ Parts of dot files from
 * vim solarized: https://github.com/altercation/vim-colors-solarized/
 
 
-[1]: https://github.com/technicalpickles/homesick
+[1]: https://github.com/andsens/homeshick

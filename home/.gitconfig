@@ -1,8 +1,10 @@
+[include]
+    path = ~/.gitconfig-personal
+#[includeIf "gitdir:~/"]
+#    path = ~/.gitconfig-personal
 [includeIf "gitdir:~/Workspace/"]
     path = ~/.gitconfig-work
-[includeIf "gitdir:~/Workspace/private"]
-    path = ~/.gitconfig-personal
-[includeIf "gitdir:~/"]
+[includeIf "gitdir:~/Workspace/private/"]
     path = ~/.gitconfig-personal
 
 [core]
@@ -35,7 +37,7 @@
     prompt = false
 
 [difftool "idea"]
-    cmd = /opt/idea/current/bin/idea.sh diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+    cmd = idea diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
 
 [difftool "diffuse"]
     cmd = diffuse -w -D $LOCAL $REMOTE

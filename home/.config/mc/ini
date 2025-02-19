@@ -21,7 +21,7 @@ mouse_move_pages_viewer=true
 mouse_close_dialog=false
 fast_refresh=false
 drop_menus=false
-wrap_mode=true
+wrap_mode=false
 old_esc_mode=true
 cd_symlinks=true
 show_all_if_ambiguous=false
@@ -82,20 +82,23 @@ editor_backup_extension=~
 editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
-skin=default
+skin=solarized
+
+shadows=true
+shell_directory_timeout=900
 
 [Layout]
-message_visible=1
-keybar_visible=1
-xterm_title=1
+message_visible=true
+keybar_visible=true
+xterm_title=true
 output_lines=0
-command_prompt=1
-menubar_visible=1
-free_space=1
-horizontal_split=0
-vertical_equal=1
-left_panel_size=53
-horizontal_equal=1
+command_prompt=true
+menubar_visible=true
+free_space=true
+horizontal_split=false
+vertical_equal=true
+left_panel_size=105
+horizontal_equal=true
 top_panel_size=1
 
 [Misc]
@@ -145,13 +148,15 @@ file_all_charsets=false
 content_case_sens=true
 content_regexp=false
 content_first_hit=false
-content_whole_words=false
+content_whole_words=true
 content_all_charsets=false
 ignore_dirs_enable=true
 ignore_dirs=
 
+follow_symlinks=false
+
 [Panelize]
-Find *.orig after patching=find . -name \\*.orig -print
-Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
-Find rejects after patching=find . -name \\*.rej -print
 Modified git files=git ls-files --modified
+Find rejects after patching=find . -name \\*.rej -print
+Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Find *.orig after patching=find . -name \\*.orig -print

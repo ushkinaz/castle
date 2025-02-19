@@ -2,13 +2,13 @@
     path = ~/.gitconfig-personal
 #[includeIf "gitdir:~/"]
 #    path = ~/.gitconfig-personal
-[includeIf "gitdir:~/Workspace/"]
+[includeIf "gitdir:~/Workspace/profee/"]
     path = ~/.gitconfig-work
 [includeIf "gitdir:~/Workspace/private/"]
     path = ~/.gitconfig-personal
 
 [core]
-	pager = /bin/less
+	pager = less
 	autocrlf = input
 
 [color]
@@ -111,3 +111,18 @@
     # Список стори, которые замержены в девелоп, но отсутствуют в локальной ветке
     unmerged = !"git log --merges --oneline ..origin/develop | grep --only-matching --perl-regexp 'Merge pull request .* feature/\\K[A-Z]+-\\d{4}[\\w-]*'" | grep '[A-Z]+-\\d{4}'
 
+[credential "https://bb.local.profee.com"]
+	provider = bitbucket
+
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

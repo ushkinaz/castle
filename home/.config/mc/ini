@@ -14,7 +14,7 @@ confirm_history_cleanup=true
 confirm_exit=false
 confirm_directory_hotlist_delete=false
 confirm_view_dir=false
-safe_delete=false
+safe_delete=true
 safe_overwrite=false
 use_8th_bit_as_meta=false
 mouse_move_pages_viewer=true
@@ -86,6 +86,7 @@ skin=solarized
 
 shadows=true
 shell_directory_timeout=900
+filepos_max_saved_entries=1024
 
 [Layout]
 message_visible=true
@@ -97,7 +98,7 @@ menubar_visible=true
 free_space=true
 horizontal_split=false
 vertical_equal=true
-left_panel_size=105
+left_panel_size=140
 horizontal_equal=true
 top_panel_size=1
 
@@ -145,10 +146,10 @@ file_shell_pattern=true
 file_find_recurs=true
 file_skip_hidden=false
 file_all_charsets=false
-content_case_sens=true
+content_case_sens=false
 content_regexp=false
 content_first_hit=false
-content_whole_words=true
+content_whole_words=false
 content_all_charsets=false
 ignore_dirs_enable=true
 ignore_dirs=
@@ -156,7 +157,7 @@ ignore_dirs=
 follow_symlinks=false
 
 [Panelize]
-Modified git files=git ls-files --modified
-Find rejects after patching=find . -name \\*.rej -print
-Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
 Find *.orig after patching=find . -name \\*.orig -print
+Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Find rejects after patching=find . -name \\*.rej -print
+Modified git files=git ls-files --modified

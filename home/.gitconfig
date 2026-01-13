@@ -2,8 +2,8 @@
     path = ~/.gitconfig-personal
 #[includeIf "gitdir:~/"]
 #    path = ~/.gitconfig-personal
-[includeIf "gitdir:~/Workspace/profee/"]
-    path = ~/.gitconfig-work
+#[includeIf "gitdir:~/Workspace/profee/"]
+#    path = ~/.gitconfig-work
 [includeIf "gitdir:~/Workspace/private/"]
     path = ~/.gitconfig-personal
 
@@ -31,7 +31,7 @@
 [diff]
     renamelimit = 2000
     tool = diffuse
-	guitool = idea
+    guitool = idea
 
 [difftool]
     prompt = false
@@ -44,12 +44,16 @@
 
 [alias]
     co = checkout
+    sw = switch
     br = branch
     ci = commit
     st = status -sb
     unstage = reset HEAD --
     out = log origin..HEAD
-    dev = checkout develop
+    dev = switch develop
+    wts = worktree list
+    wtadd = worktree add
+    wtrm = worktree remove
 
     # various pretty loggers from various places
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -73,7 +77,7 @@
 
     # what got pushed to master in the last hour
     #  based on http://stackoverflow.com/questions/3357219/expose-the-date-a-commit-was-pushed-to-a-repository
-    justpushed = log origin/master@{\"1 hour ago\"}..origin/master --
+    justpushed = log origin/main@{\"1 hour ago\"}..origin/main --
 
     # log everything with $1 string in the diff
     timegrep = log -S
@@ -111,18 +115,13 @@
     # Список стори, которые замержены в девелоп, но отсутствуют в локальной ветке
     unmerged = !"git log --merges --oneline ..origin/develop | grep --only-matching --perl-regexp 'Merge pull request .* feature/\\K[A-Z]+-\\d{4}[\\w-]*'" | grep '[A-Z]+-\\d{4}'
 
-[credential "https://bb.local.profee.com"]
-	provider = bitbucket
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 [credential]
-	helper = 
+	helper =
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
-[user]
-	name = ushkinaz
-	email = 398781+ushkinaz@users.noreply.github.com

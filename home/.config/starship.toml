@@ -1,0 +1,88 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Which is equivalent to
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$docker_context\
+$package\
+$c\
+$cmake\
+$daml\
+$deno\
+$elixir\
+$elm\
+$fennel\
+$gleam\
+$golang\
+$guix_shell\
+$helm\
+$java\
+$julia\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$opa\
+$python\
+$rust\
+$typst\
+$buf\
+$nix_shell\
+$conda\
+$aws\
+$direnv\
+$env_var\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$time\
+$status\
+$character"""
+
+[git_branch]
+disabled = false
+format = '[$symbol$branch(:$remote_branch)]($style) '
+symbol = '↪ '
+#ignore_branches = ['main']
+
+[git_metrics]
+disabled = false
+
+[git_state]
+disabled = false
+
+[status]
+disabled = false
+symbol = ''
+
+[directory]
+truncation_symbol = '../'
+truncate_to_repo = false
+style = 'dimmed cyan'
+repo_root_style = 'bold cyan'
+truncation_length = 3
+
+[character]
+success_symbol = '[➢](bold green) '
+error_symbol = '[⨯](bold red) '
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+symbol = '⬡ '

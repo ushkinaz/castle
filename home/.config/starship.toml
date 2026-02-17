@@ -35,12 +35,10 @@ $java\
 $julia\
 $gradle\
 $lua\
-$nim\
 $nodejs\
 $opa\
 $python\
 $rust\
-$typst\
 $buf\
 $nix_shell\
 $conda\
@@ -51,10 +49,10 @@ $custom\
 $sudo\
 $cmd_duration\
 $line_break\
+[└─](bold green)\
+$memory_usage\
 $jobs\
-$time\
-$status\
-$character"""
+$status$character"""
 
 [git_branch]
 disabled = false
@@ -86,3 +84,15 @@ error_symbol = '[⨯](bold red) '
 [nodejs]
 format = '[$symbol($version )]($style)'
 symbol = '⬡ '
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+python_binary = 'python3'
+detect_folders = ["!Workspaces"]
+
+[memory_usage]
+disabled = false
+format = '$symbol[${ram_pct}]($style) '
+symbol = '🐏 '
+threshold = 80
+style = 'bold dimmed green'
